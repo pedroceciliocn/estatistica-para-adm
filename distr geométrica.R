@@ -1,0 +1,41 @@
+dgeom(x, prob, log = FALSE)
+pgeom(q, prob, lower.tail = TRUE, log.p = FALSE)
+qgeom(p, prob, lower.tail = TRUE, log.p = FALSE)
+rgeom(n, prob)
+
+
+
+##
+
+
+
+
+df_dist_geometrica <- data.frame(x = 0:3, prob = pgeom(q = 0:3, prob = 1/3, lower.tail = FALSE, log.p = FALSE))
+
+
+ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
+  geom_line() +
+  geom_text(aes(label = round(prob,4), y = prob + 0.01),
+            position = position_dodge(0.9),
+            size = 3,
+            vjust = 0) +
+  labs(title = "Distribuição Geométrica",
+       subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
+       x = "Tentativas (x)",
+       y = "Probabilidade")
+
+
+
+##### USANDO COLUNAS
+ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
+  geom_col() +
+  geom_text(aes(label = round(prob,4), y = prob + 0.01),
+            position = position_dodge(0.9),
+            size = 3,
+            vjust = 0) +
+  labs(title = "Distribuição Geométrica",
+       subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
+       x = "Tentativas (x)",
+       y = "Probabilidade")
+
+

@@ -1,7 +1,8 @@
-dgeom(x, prob, log = FALSE)
-pgeom(q, prob, lower.tail = TRUE, log.p = FALSE)
-qgeom(p, prob, lower.tail = TRUE, log.p = FALSE)
-rgeom(n, prob)
+#formulas
+#dgeom(x, prob, log = FALSE)
+#pgeom(q, prob, lower.tail = TRUE, log.p = FALSE)
+#qgeom(p, prob, lower.tail = TRUE, log.p = FALSE)
+#rgeom(n, prob)
 
 
 
@@ -19,7 +20,7 @@ ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
             position = position_dodge(0.9),
             size = 3,
             vjust = 0) +
-  labs(title = "Distribuição Geométrica",
+  labs(title = "Distribui??o Geom?trica",
        subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
        x = "Tentativas (x)",
        y = "Probabilidade")
@@ -33,7 +34,7 @@ ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
             position = position_dodge(0.9),
             size = 3,
             vjust = 0) +
-  labs(title = "Distribuição Geométrica",
+  labs(title = "Distribui??o Geom?trica",
        subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
        x = "Tentativas (x)",
        y = "Probabilidade")

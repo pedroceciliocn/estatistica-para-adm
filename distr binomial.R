@@ -35,8 +35,8 @@ ggplot(data = df_dbinom_filhos, mapping = aes(x = n_de_filhos, y = prob)) +
        y = "probabilidade") 
 
 
-########### DISTRIBUICAO BINOMIAL ######################
-# n = 10 clientes que entram na loja, p = 0.2 probabilidade de vender, q = 0.8 prob de nao vender
+# DISTRIBUICAO BINOMIAL 
+## n = 10 clientes que entram na loja, p = 0.2 probabilidade de vender, q = 0.8 prob de nao vender
 
 dbinom_clientes<- data.frame(n_de_clientes = 0:10, prob = dbinom(0:10, size = 10, prob = 0.2))
 
@@ -44,7 +44,7 @@ plot(dbinom(0:10, size = 10, prob = 0.2), type = "b")
 plot(dbinom_clientes, type = "b")
 
 
-#usando ggplot2
+##usando ggplot2
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_col() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -59,7 +59,7 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
 
 
 
-#usando linhas
+##usando linhas
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_line() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),

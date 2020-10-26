@@ -1,11 +1,9 @@
----
-title: "distr binomial"
-author: "Pedro Neto"
-date: "2020-10-25"
-encoding: "UTF-8"
-output: github_document
----
-```{r}
+distr binomial
+================
+Pedro Neto
+2020-10-25
+
+``` r
 #' DISTRIBUI??O BINOMIAL
 ##' n = 3, p = 0.47 prob de nascer homem
 ##'       q = 0.53 prob de nascer nao homem
@@ -14,23 +12,64 @@ dbinom_filhos <- data.frame(dbinom(0:3, size = 3, prob = 0.47)) #P(x=0) todos os
 #dbinom(2, 3, 0.47) #P(x=2) 2 filhos homem entre 3
 #dbinom(3, 3, 0.47) #P(x=3) 3 filhos homem entre 3
 ```
----
-```{r}
+
+-----
+
+``` r
 ##'dbinom plot com r base
 plot(dbinom(0:3, 3, 0.47), type = "s") #density
+```
+
+![](distr-binomial_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+``` r
 dbinom(2, 3, 0.47)
+```
+
+    ## [1] 0.351231
+
+``` r
 qbinom(0:3, 3, 0.53) #quantile function
+```
+
+    ## Warning in qbinom(0:3, 3, 0.53): NaNs produzidos
+
+    ## [1]   0   3 NaN NaN
+
+``` r
 rbinom(3, 1, 0.47) #random generation
+```
+
+    ## [1] 0 0 1
+
+``` r
 #pbinom() #distribution function
 ```
----
-```{r}
+
+-----
+
+``` r
 df_dbinom_filhos <- data.frame(n_de_filhos = 0:3, prob = dbinom(0:3, 3, 0.47))
 ```
 
-#'USANDO GGPLOT2
-```{r}
+\#’USANDO GGPLOT2
+
+``` r
 library(tidyverse)
+```
+
+    ## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
+
+    ## v ggplot2 3.3.2     v purrr   0.3.4
+    ## v tibble  3.0.4     v dplyr   1.0.2
+    ## v tidyr   1.1.2     v stringr 1.4.0
+    ## v readr   1.4.0     v forcats 0.5.0
+
+    ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
+
+``` r
 ggplot(data = df_dbinom_filhos, mapping = aes(x = n_de_filhos, y = prob)) +
   geom_col() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -43,20 +82,27 @@ ggplot(data = df_dbinom_filhos, mapping = aes(x = n_de_filhos, y = prob)) +
        y = "probabilidade") 
 ```
 
+![](distr-binomial_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
-#' DISTRIBUICAO BINOMIAL 
-##' n = 10 clientes que entram na loja, p = 0.2 probabilidade de vender, q = 0.8 prob de nao vender
+\#’ DISTRIBUICAO BINOMIAL \#\#’ n = 10 clientes que entram na loja, p =
+0.2 probabilidade de vender, q = 0.8 prob de nao vender
 
-
-```{r}
+``` r
 dbinom_clientes<- data.frame(n_de_clientes = 0:10, prob = dbinom(0:10, size = 10, prob = 0.2))
 plot(dbinom(0:10, size = 10, prob = 0.2), type = "b")
+```
+
+![](distr-binomial_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
 plot(dbinom_clientes, type = "b")
 ```
 
-##'usando ggplot2
+![](distr-binomial_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
 
-```{r}
+\#\#’usando ggplot2
+
+``` r
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_col() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -69,9 +115,11 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
        y = "probabilidade") 
 ```
 
+![](distr-binomial_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-##'usando linhas
-```{r}
+\#\#’usando linhas
+
+``` r
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_line() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -86,9 +134,11 @@ b(10, 0.2)",
   geom_ribbon(mapping = aes(ymax = prob, ymin = 0), color = "grey", fill = "grey70", alpha = 0.5)
 ```
 
+![](distr-binomial_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-#####'smooth #### nao sei se ? correto usar
-```{r}
+\#\#\#\#\#’smooth \#\#\#\# nao sei se ? correto usar
+
+``` r
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_smooth() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -101,18 +151,21 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
        y = "probabilidade") 
 ```
 
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
+![](distr-binomial_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
-############################################ nada a ver #######################################
+# nada a ver
 
-```{r}
+``` r
 rbind()
+```
 
+    ## NULL
+
+``` r
 binomData = data.frame(Successes = rbinom(100, 3, .47))
 ggplot(binomData, aes(x = Successes)) + geom_histogram(binwidth = 1)
 ```
 
-
-
-
-
+![](distr-binomial_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->

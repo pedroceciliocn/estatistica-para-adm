@@ -13,7 +13,7 @@
 
 df_dist_geometrica <- data.frame(x = 0:3, prob = pgeom(q = 0:3, prob = 1/3, lower.tail = FALSE, log.p = FALSE))
 
-
+library(tidyverse)
 ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
   geom_line() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),

@@ -6,9 +6,9 @@
 #' output: github_document
 #' ---
 #' 
-#' DISTRIBUIÇÃO BINOMIAL
-##' n = 3, p = 0.47 prob de nascer homem
-##'       q = 0.53 prob de nascer nao homem
+#'DISTRIBUIÇÃO BINOMIAL
+# n = 3, p = 0.47 prob de nascer homem
+#        q = 0.53 prob de nascer nao homem
 
 dbinom_filhos <- data.frame(dbinom(0:3, size = 3, prob = 0.47)) #P(x=0) todos os filhos n?o homem entre 3
 #dbinom(1, 3, 0.47) #P(x=1) 1 filho homem entre 3
@@ -73,7 +73,7 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
             position = position_dodge(0.9),
             size = 3,
             vjust = 0) +
-  labs(title = "Distribui??o Binomial",
+  labs(title = "Distribuição Binomial",
        subtitle = "Clientes entram numa loja: Probabilidade de 0 a 10 comprarem.
 b(10, 0.2)",
        x = "Sucessos (x)",

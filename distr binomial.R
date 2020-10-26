@@ -1,14 +1,14 @@
 
-# DISTRIBUI??O BINOMIAL
-## n = 3, p = 0.47 prob de nascer homem
-##       q = 0.53 prob de nascer nao homem
+#' DISTRIBUI??O BINOMIAL
+##' n = 3, p = 0.47 prob de nascer homem
+##'       q = 0.53 prob de nascer nao homem
 
 dbinom_filhos <- data.frame(dbinom(0:3, size = 3, prob = 0.47)) #P(x=0) todos os filhos n?o homem entre 3
 #dbinom(1, 3, 0.47) #P(x=1) 1 filho homem entre 3
 #dbinom(2, 3, 0.47) #P(x=2) 2 filhos homem entre 3
 #dbinom(3, 3, 0.47) #P(x=3) 3 filhos homem entre 3
 
-#dbinom plot com r base
+##'dbinom plot com r base
 plot(dbinom(0:3, 3, 0.47), type = "s") #density
 dbinom(2, 3, 0.47)
 qbinom(0:3, 3, 0.53) #quantile function
@@ -21,7 +21,7 @@ df_dbinom_filhos <- data.frame(n_de_filhos = 0:3, prob = dbinom(0:3, 3, 0.47))
 
 
 
-#USANDO GGPLOT2
+#'USANDO GGPLOT2
 library(tidyverse)
 ggplot(data = df_dbinom_filhos, mapping = aes(x = n_de_filhos, y = prob)) +
   geom_col() +
@@ -35,8 +35,8 @@ ggplot(data = df_dbinom_filhos, mapping = aes(x = n_de_filhos, y = prob)) +
        y = "probabilidade") 
 
 
-# DISTRIBUICAO BINOMIAL 
-## n = 10 clientes que entram na loja, p = 0.2 probabilidade de vender, q = 0.8 prob de nao vender
+#' DISTRIBUICAO BINOMIAL 
+##' n = 10 clientes que entram na loja, p = 0.2 probabilidade de vender, q = 0.8 prob de nao vender
 
 dbinom_clientes<- data.frame(n_de_clientes = 0:10, prob = dbinom(0:10, size = 10, prob = 0.2))
 
@@ -44,7 +44,7 @@ plot(dbinom(0:10, size = 10, prob = 0.2), type = "b")
 plot(dbinom_clientes, type = "b")
 
 
-##usando ggplot2
+##'usando ggplot2
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_col() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -59,7 +59,7 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
 
 
 
-##usando linhas
+##'usando linhas
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_line() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -75,7 +75,7 @@ b(10, 0.2)",
 
 
 
-#####smooth #### nao sei se ? correto usar
+#####'smooth #### nao sei se ? correto usar
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_smooth() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -87,7 +87,7 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
        x = "Sucessos (x)",
        y = "probabilidade") 
 
-############################################ nada a ver #######################################
+############################################' nada a ver #######################################
 rbind()
 
 

@@ -1,27 +1,23 @@
----
-  title: "distr geométrica"
-author: "Pedro Neto"
-date: "2020-10-25"
-encoding: "UTF-8"
-output: github_document
----
+distr geométrica
+================
+Pedro Neto
+2020-10-25
 
+``` r
 #formulas
 #dgeom(x, prob, log = FALSE)
 #pgeom(q, prob, lower.tail = TRUE, log.p = FALSE)
 #qgeom(p, prob, lower.tail = TRUE, log.p = FALSE)
 #rgeom(n, prob)
+```
 
+``` r
+library(tidyverse)
+```
 
-
-##
-
-
-
-
+``` r
 df_dist_geometrica <- data.frame(x = 0:3, prob = pgeom(q = 0:3, prob = 1/3, lower.tail = FALSE, log.p = FALSE))
 
-library(tidyverse)
 ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
   geom_line() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -32,10 +28,12 @@ ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
        subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
        x = "Tentativas (x)",
        y = "Probabilidade")
+```
 
+![](distr-geométrica_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+\#\#\#\#\# USANDO COLUNAS
 
-
-##### USANDO COLUNAS
+``` r
 ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
   geom_col() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -46,5 +44,6 @@ ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
        subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
        x = "Tentativas (x)",
        y = "Probabilidade")
+```
 
-
+![](distr-geométrica_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->

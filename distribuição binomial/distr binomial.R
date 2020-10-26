@@ -1,5 +1,12 @@
-
-#' DISTRIBUI??O BINOMIAL
+#' ---
+#' title: "distribuição binomial"
+#' author: "Pedro Neto"
+#' date: "25/10/2020"
+#' encoding: "UTF-8"
+#' output: github_document
+#' ---
+#' 
+#' DISTRIBUIÇÃO BINOMIAL
 ##' n = 3, p = 0.47 prob de nascer homem
 ##'       q = 0.53 prob de nascer nao homem
 
@@ -34,7 +41,7 @@ ggplot(data = df_dbinom_filhos, mapping = aes(x = n_de_filhos, y = prob)) +
        x = "Sucessos (x)",
        y = "probabilidade") 
 
-
+---
 #' DISTRIBUICAO BINOMIAL 
 ##' n = 10 clientes que entram na loja, p = 0.2 probabilidade de vender, q = 0.8 prob de nao vender
 
@@ -74,8 +81,8 @@ b(10, 0.2)",
   geom_ribbon(mapping = aes(ymax = prob, ymin = 0), color = "grey", fill = "grey70", alpha = 0.5)
 
 
-
-#####'smooth #### nao sei se ? correto usar
+---
+##'smooth
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
   geom_smooth() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),
@@ -87,14 +94,7 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
        x = "Sucessos (x)",
        y = "probabilidade") 
 
-############################################' nada a ver #######################################
-rbind()
-
-
-
-
+##' nada a ver 
+#rbind()
 binomData = data.frame(Successes = rbinom(100, 3, .47))
 ggplot(binomData, aes(x = Successes)) + geom_histogram(binwidth = 1)
-
-
-

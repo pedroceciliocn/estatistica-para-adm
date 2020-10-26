@@ -1,22 +1,21 @@
-distr binomial
+distribuição binomial
 ================
 Pedro Neto
-2020-10-25
+25/10/2020
+
+DISTRIBUIÇÃO BINOMIAL n = 3, p = 0.47 prob de nascer homem q = 0.53 prob
+de nascer nao homem
 
 ``` r
-#' DISTRIBUI??O BINOMIAL
-##' n = 3, p = 0.47 prob de nascer homem
-##'       q = 0.53 prob de nascer nao homem
 dbinom_filhos <- data.frame(dbinom(0:3, size = 3, prob = 0.47)) #P(x=0) todos os filhos n?o homem entre 3
 #dbinom(1, 3, 0.47) #P(x=1) 1 filho homem entre 3
 #dbinom(2, 3, 0.47) #P(x=2) 2 filhos homem entre 3
 #dbinom(3, 3, 0.47) #P(x=3) 3 filhos homem entre 3
 ```
 
------
+dbinom plot com r base
 
 ``` r
-##'dbinom plot com r base
 plot(dbinom(0:3, 3, 0.47), type = "s") #density
 ```
 
@@ -40,19 +39,16 @@ qbinom(0:3, 3, 0.53) #quantile function
 rbinom(3, 1, 0.47) #random generation
 ```
 
-    ## [1] 0 0 1
+    ## [1] 0 1 1
 
 ``` r
 #pbinom() #distribution function
-```
 
------
 
-``` r
 df_dbinom_filhos <- data.frame(n_de_filhos = 0:3, prob = dbinom(0:3, 3, 0.47))
 ```
 
-\#’USANDO GGPLOT2
+USANDO GGPLOT2
 
 ``` r
 library(tidyverse)
@@ -82,13 +78,14 @@ ggplot(data = df_dbinom_filhos, mapping = aes(x = n_de_filhos, y = prob)) +
        y = "probabilidade") 
 ```
 
-![](distr-binomial_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](distr-binomial_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-\#’ DISTRIBUICAO BINOMIAL \#\#’ n = 10 clientes que entram na loja, p =
-0.2 probabilidade de vender, q = 0.8 prob de nao vender
+DISTRIBUICAO BINOMIAL n = 10 clientes que entram na loja, p = 0.2
+probabilidade de vender, q = 0.8 prob de nao vender
 
 ``` r
 dbinom_clientes<- data.frame(n_de_clientes = 0:10, prob = dbinom(0:10, size = 10, prob = 0.2))
+
 plot(dbinom(0:10, size = 10, prob = 0.2), type = "b")
 ```
 
@@ -100,7 +97,7 @@ plot(dbinom_clientes, type = "b")
 
 ![](distr-binomial_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
 
-\#\#’usando ggplot2
+usando ggplot2
 
 ``` r
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
@@ -117,7 +114,7 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
 
 ![](distr-binomial_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-\#\#’usando linhas
+usando linhas
 
 ``` r
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
@@ -136,7 +133,7 @@ b(10, 0.2)",
 
 ![](distr-binomial_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-\#\#\#\#\#’smooth \#\#\#\# nao sei se ? correto usar
+smooth
 
 ``` r
 ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
@@ -153,19 +150,14 @@ ggplot(data = dbinom_clientes, mapping = aes(x = n_de_clientes, y = prob)) +
 
     ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
-![](distr-binomial_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](distr-binomial_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
-# nada a ver
-
-``` r
-rbind()
-```
-
-    ## NULL
+nada a ver
 
 ``` r
+#rbind()
 binomData = data.frame(Successes = rbinom(100, 3, .47))
 ggplot(binomData, aes(x = Successes)) + geom_histogram(binwidth = 1)
 ```
 
-![](distr-binomial_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](distr-binomial_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->

@@ -13,7 +13,7 @@ boxplot(df_infalunos)
 id <- c(rep(18, 2), 19, rep(20, 6), rep(21, 2), 22, 23, 24, rep(25, 3), 26, 29, 30, 35, 37)
 mean(id)
 
-df_infalunos <- data.frame(idades_alunos_adm)
+
 
 
 
@@ -23,6 +23,8 @@ idades_alunos_adm <- c(23, 21, 18, 24, 26, 23, 20, 19,
                        27, 17, 18, 18, 19, 18, 20, 18,
                        18, 24, 47, 24, 20, 19, 27, 23,
                        22, 18, 19, 21, 28, 18, 18)
+
+df_infalunos <- data.frame(idades_alunos_adm)
 
 length(idades_alunos_adm)
 mean(idades_alunos_adm)
@@ -38,7 +40,7 @@ moda
 
 sd(idades_alunos_adm)
 plot(idades_alunos_adm, main = "", xlab = "ordem apresentada", ylab = "idade dos alunos")
-title(main = "Idades dos alunos da turma de Estatística Univasf 2019.2")
+title(main = "Idades dos alunos da turma de EstatÃ­stica Univasf 2019.2")
 abline(h = mean(idades_alunos_adm), col = "green")
 abline(h = mean(idades_alunos_adm) + sd(idades_alunos_adm), col = "blue")
 abline(h = mean(idades_alunos_adm) - sd(idades_alunos_adm), col = "light blue")

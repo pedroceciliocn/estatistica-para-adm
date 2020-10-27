@@ -12,13 +12,6 @@ output: github_document
 #qgeom(p, prob, lower.tail = TRUE, log.p = FALSE)
 #rgeom(n, prob)
 
-
-
-##
-
-
-
-
 df_dist_geometrica <- data.frame(x = 0:3, prob = pgeom(q = 0:3, prob = 1/3, lower.tail = FALSE, log.p = FALSE))
 
 library(tidyverse)
@@ -28,7 +21,7 @@ ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
             position = position_dodge(0.9),
             size = 3,
             vjust = 0) +
-  labs(title = "Distribui??o Geom?trica",
+  labs(title = "Distribuição Geométrica",
        subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
        x = "Tentativas (x)",
        y = "Probabilidade")
@@ -42,7 +35,7 @@ ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
             position = position_dodge(0.9),
             size = 3,
             vjust = 0) +
-  labs(title = "Distribui??o Geom?trica",
+  labs(title = "Distribuição Geométrica",
        subtitle = "Probabilidade do primeiro sucesso sair entre 0 e 3 tentativas.",
        x = "Tentativas (x)",
        y = "Probabilidade")

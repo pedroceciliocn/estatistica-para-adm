@@ -68,7 +68,8 @@ ggplot(data = df_distri_hipergeometrica_megasena, mapping = aes(x = acertos, y =
        x = "Acertos (x)",
        y = "Probabilidade (1 em tantas chances)")
 ```
-#USANDO PONTOS
+
+#### USANDO PONTOS
 ```{r}
 0
 ```

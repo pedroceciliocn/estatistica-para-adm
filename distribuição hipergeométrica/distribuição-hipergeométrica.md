@@ -104,7 +104,8 @@ ggplot(data = df_distri_hipergeometrica_megasena, mapping = aes(x = acertos, y =
 ```
 
 ![](distribuição-hipergeométrica_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-\#USANDO PONTOS
+
+#### USANDO PONTOS
 
 ``` r
 0

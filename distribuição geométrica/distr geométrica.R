@@ -1,10 +1,10 @@
----
-  title: "distr geométrica"
-author: "Pedro Neto"
-date: "2020-10-25"
-encoding: "UTF-8"
-output: github_document
----
+#' ---
+#' title: "distr geométrica"
+#' author: "Pedro Neto"
+#' date: "2020-10-25"
+#' encoding: "UTF-8"
+#' output: github_document
+#' ---
 
 #formulas
 #dgeom(x, prob, log = FALSE)
@@ -15,6 +15,7 @@ output: github_document
 df_dist_geometrica <- data.frame(x = 0:3, prob = pgeom(q = 0:3, prob = 1/3, lower.tail = FALSE, log.p = FALSE))
 
 library(tidyverse)
+##### USANDO LINHAS
 ggplot(data = df_dist_geometrica, mapping = aes(x = x, y = prob)) +
   geom_line() +
   geom_text(aes(label = round(prob,4), y = prob + 0.01),

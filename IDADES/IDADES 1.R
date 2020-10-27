@@ -6,7 +6,7 @@ idade <- c(20, 22, 23, 23, 23, 24, 26, 27, 22,
 27, 27, 28, 28, 29, 28, 23, 29, 21)
 
 
-
+library(tidyverse)
 
 
 tabidade <- table(idade)

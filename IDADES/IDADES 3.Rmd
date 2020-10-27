@@ -1,0 +1,20 @@
+---
+  title: "IDADES 3"
+  author: "Pedro Neto"
+  date: "26/10/2020"
+  encoding: "UTF-8"
+  output: github_document
+---
+```{r}
+conjunto_A <- c(2, 4, 6)
+conjunto_B <- c(4, 5, 6)
+```
+
+```{r}
+union(conjunto_A, conjunto_B)
+intersect(conjunto_A, conjunto_B)
+```
+
+
+
+

@@ -5,12 +5,12 @@
   encoding: "UTF-8"
   output: github_document
 ---
-```{r}
+```{r construção conjuntos, echo=TRUE}
 conjunto_A <- c(2, 4, 6)
 conjunto_B <- c(4, 5, 6)
 ```
 
-```{r}
+```{r operações conjuntos, echo=TRUE}
 union(conjunto_A, conjunto_B)
 intersect(conjunto_A, conjunto_B)
 ```
